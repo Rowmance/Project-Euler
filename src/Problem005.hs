@@ -7,6 +7,7 @@
 -- of times.
 
 -- the resulting prime factors were as follows.
+f :: Int
 f = foldr1 (*) [2, 3, 4, 5, 6, 7, 11, 13, 17, 19]
 
 --------------------------
