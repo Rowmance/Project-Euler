@@ -14,7 +14,7 @@ isPrime n = null [x | x <- [2..isqrt n], n `mod` x == 0]
   where isqrt = floor . sqrt . fromIntegral
 
 smallestPrimeFactor :: Int -> Int
-smallestPrimeFactor n = [x | x <- [2..n - 1], n `mod` x == 0, isPrime x]!!0
+smallestPrimeFactor n = head [x | x <- [2..n - 1], n `mod` x == 0, isPrime x]
 
 largestPrimeFactor :: Int -> Int
 largestPrimeFactor n
