@@ -9,9 +9,7 @@
 -- factors which have already been obtained. If we repeat until the answer is prime, we'll have obtained
 -- the largest prime factor.
 
-isPrime :: Int -> Bool
-isPrime n = null [x | x <- [2..isqrt n], n `mod` x == 0]
-  where isqrt = floor . sqrt . fromIntegral
+import Common
 
 smallestPrimeFactor :: Int -> Int
 smallestPrimeFactor n = head [x | x <- [2..n - 1], n `mod` x == 0, isPrime x]

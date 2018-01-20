@@ -1,6 +1,8 @@
 -- Problem 008
 -- https://projecteuler.net/problem=8
 
+import Common
+
 chunks :: Int -> [a] -> [[a]]
 chunks n (x:xs)
   | length (x:xs) < n = []
@@ -11,7 +13,6 @@ f :: Int
 f = maxList $ map stringProduct $ numberChunks
   where numberChunks = chunks 13 number
         stringProduct x = product $ map charToInt x
-        charToInt x = fromEnum x - fromEnum '0'
         maxList = foldr1 max
 
 --------------------------
