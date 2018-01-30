@@ -2,7 +2,7 @@
 -- https://projecteuler.net/problem=13
 
 --------------------------
-f = take 10 $ show $ foldr1 (+) numbers
+f = take 10 $ show $ sum numbers
 
 --------------------------
 main = print f 
