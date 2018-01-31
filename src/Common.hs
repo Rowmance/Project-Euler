@@ -11,8 +11,9 @@ isqrt = floor . sqrt . fromIntegral
 
 -- True if the given number is prime
 isPrime :: Int -> Bool
-isPrime 1 = False
-isPrime n = null [x | x <- [2..isqrt n], n `mod` x == 0]
+isPrime n
+  | n < 2 = False
+  | otherwise = null [x | x <- [2..isqrt n], n `mod` x == 0]
 
 -- The factorial of the given number
 factorial :: Int -> Integer
