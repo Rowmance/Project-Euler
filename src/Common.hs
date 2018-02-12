@@ -17,8 +17,8 @@ isPrime n
 
 -- The factorial of the given number
 factorial :: Int -> Integer
-factorial 1 = 1
-factorial n = toInteger n * factorial (n - 1)
+factorial 0 = 1
+factorial n = foldr1 (*) [1..toInteger n]
 
 -- Combinations choose function
 choose :: Int -> Int -> Integer
